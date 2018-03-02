@@ -28,3 +28,9 @@ dependencies {
 
     testCompile 'org.testng:testng:6.8.21'
 }
+
+task copyDeps(type: Copy) {
+  dependsOn build
+  from configurations.runtime
+  into "${project.projectDir}/build/libs"
+}
